@@ -1,0 +1,11 @@
+{
+  "org": "allenai",
+  "repo": "asta-bench-leaderboard",
+  "versions": [
+    {
+      "commit": "4afafd3712d1cdd93dddc39da39d7d2ad832dfca",
+      "tag": "",
+      "parsed_at": "2026-11-07T19:06:03.747956+00:00"
+    }
+  ]
+}

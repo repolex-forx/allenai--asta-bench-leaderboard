@@ -1,1 +1,145 @@
-Initializing
+# Repolex Knowledge Graph of allenai/asta-bench-leaderboard
+
+RDF knowledge graph data for [allenai/asta-bench-leaderboard](https://github.com/allenai/asta-bench-leaderboard), parsed by [repolex](https://repolex.ai).
+
+> **Note**: This data is experimental and subject to change without notice.
+
+## How to use this data
+
+The easiest way to get started is to install the [rlex](https://github.com/repolex-ai/rlex) query tool:
+
+```bash
+cargo install --git https://github.com/repolex-ai/rlex
+```
+
+Verify the install:
+
+```bash
+rlex --help
+```
+
+**rlex is designed to be used primarily by LLMs in a terminal.** Start up your favorite AI assistant and ask it to use rlex. It handles the SPARQL — you just ask questions in plain English.
+
+To load this repo's data:
+
+```bash
+rlex download allenai/asta-bench-leaderboard
+```
+
+Consult `rlex --help` for other options, including SPARQL queries, HTTP server, and interactive visualization.
+
+## Data structure
+
+All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) (`.nq.gz`), a standard RDF format that can be loaded into any triplestore or graph database.
+
+```
+.
+├── aggregate
+│   ├── ast
+│   │   └── 4afafd3712d1cdd93dddc39da39d7d2ad832dfca
+│   │       └── chunk-001.nq.gz
+│   └── repolex
+│       └── 4afafd3712d1cdd93dddc39da39d7d2ad832dfca
+│           └── chunk-001.nq.gz
+├── blob
+│   ├── 038a961621816e6550b049786fb12fe28e97ae97.nq.gz
+│   ├── 06cb2ed0b2f862aa77f4b14aa982bb7ca0d6b604.nq.gz
+│   ├── 070a62b9b78084c8d14c29a5d992c7dd2d3e1432.nq.gz
+│   ├── 0af793fcd8c93ef6190386e1a6fcc04ef14ff331.nq.gz
+│   ├── 0f9f220dab92d36cd4211e9e560bbd18a0563ed5.nq.gz
+│   ├── 20f740857e53066f237923557f8fb3df07bc23af.nq.gz
+│   ├── 2236a2c21f42bc99f162f22dcf4cbba9f551f6af.nq.gz
+│   ├── 2250685982f2cf9f7c3807b92ec1a925306e185c.nq.gz
+│   ├── 226dd6719b453af2db546b8476f7841b9ac121ab.nq.gz
+│   ├── 268dd9ab710c15bacfd98aba83963e881f561ef4.nq.gz
+│   ├── 324bbc6375a3ca40fc0b22469c52437cb1e3d09b.nq.gz
+│   ├── 34cfa1e8cbbf2a6eab236f28b8428c67876a4610.nq.gz
+│   ├── 38d6c3c8ee040d47eef46c60ffca092cae69506e.nq.gz
+│   ├── 396bb1f231e4dffd1035e21ab47994fa35e1aaff.nq.gz
+│   ├── 39d67e3cde9ca295819b86262671b0faee5082f3.nq.gz
+│   ├── 3b74754ad376d5b22df54139f72dfa025f16836a.nq.gz
+│   ├── 3b832d2706e3da5a3af9c9464c276c8418332405.nq.gz
+│   ├── 3bd75baef88eebdfb0f83d17ae7a8aff089410d0.nq.gz
+│   ├── 44b266792733c505dbb8c90beac6ed3b53ee01e5.nq.gz
+│   ├── 46243656b3f197672662d7fdeed6ff98886224b0.nq.gz
+│   ├── 46d9a15b36f98427deecace6b3c26563ab3c2a7c.nq.gz
+│   ├── 509fcc5ff6b908a2a7213a324aeb38770214dd6c.nq.gz
+│   ├── 554dc9de02927a898ce0b0b5f8d466dbbffab0a8.nq.gz
+│   ├── 5b136aa0796bcc985bddf997aa1f8d5d26636c61.nq.gz
+│   ├── 5b702bb34e9a3914a134d868c1df0b3cae6830bb.nq.gz
+│   ├── 61a46dce4c3cb44c4f31cfb25915db51758f9fcc.nq.gz
+│   ├── 64901cb23db76f5378b06064e4e4d7a70a629a1b.nq.gz
+│   ├── 680b774b6df7e598bb1439e879ef016856f92238.nq.gz
+│   ├── 712c4ca565cb6da74cf40c0919caabb25510f431.nq.gz
+│   ├── 79ce6d8b1c9083d708bcc0e834e9d42b28bce424.nq.gz
+│   ├── 79d860e5c93f30e21e3939c7d0c4636f84014071.nq.gz
+│   ├── 7cd99c8b405046f01cecfba1ccc942227a260133.nq.gz
+│   ├── 7f622c51049a7d2848158da5d8542aef00d39d85.nq.gz
+│   ├── 8084cd5cd0c907883071358149ee004d0bd1b458.nq.gz
+│   ├── 82f180c44248fae5889743d0428aa2a8612e83db.nq.gz
+│   ├── 86edb1a81eed854f30f6f4c4881f2b96fa698da9.nq.gz
+│   ├── 89584c94add354c5afa629703db573a03732abe0.nq.gz
+│   ├── 93e5262297b2b3aa85b99a41de5746fe86558e10.nq.gz
+│   ├── 9661ffd30b6aec8cfaf6413d437d2c887e4a5231.nq.gz
+│   ├── a484744b38755477627372f351ab9fbe2b3b5aef.nq.gz
+│   ├── a710b991257a502b05967e604abbadfa9b86c39c.nq.gz
+│   ├── a76b39775a913d0f026f702bf5b7ec80cb1074f0.nq.gz
+│   ├── ae73b44d77998d246ba37f715b5db1eddbd928c6.nq.gz
+│   ├── af6caf448193041b4851f4bd87ca0f5c90e1d3a5.nq.gz
+│   ├── b0be5a8a325be1d51701c1ac310add27d98cbf68.nq.gz
+│   ├── b1ab7e14c02ce058efa3d17f338a1955b4b2c2e0.nq.gz
+│   ├── b30c535c95aa23f4395d0b4b27e21e8ce04eab9d.nq.gz
+│   ├── b3f473d91139267970eaed3f6061164d4f84ca97.nq.gz
+│   ├── b82f0830d1c0287f506afc6be3d5199ad47fc8f3.nq.gz
+│   ├── b88476e6cb065c5f4b62efc8d455dceec34e7780.nq.gz
+│   ├── b9ef6f80eec122f14466d65a68a2c5cc747f63a9.nq.gz
+│   ├── bc52aa3f0cc2b3f5a766fd2dcbd080921caab0ed.nq.gz
+│   ├── cc1744897df679acb3f353b2614a2c5a31573ec0.nq.gz
+│   ├── cd19eb27b4e15dca998abee37558b4509b512e3b.nq.gz
+│   ├── ceb3dca0e8fd117379ca9ce86969862c0599dae2.nq.gz
+│   ├── ceb903e2aad29a0d8ab513d5740a1cebc4560f27.nq.gz
+│   ├── d47d4dab17cf7a933029feb30338dd5758de8a81.nq.gz
+│   ├── d48ec5204d1aff68f2c214edfe005cf390b7b095.nq.gz
+│   ├── d5953aac408ca232dc0163b7b1e7390c33c0edae.nq.gz
+│   ├── dbf5572b4fb0ff4e6314e944355a8a27ce366a3e.nq.gz
+│   ├── dc7b6cfdc1ad2e8db00f95b8d5d77c5a44ee7e03.nq.gz
+│   ├── e6f66024f092c468a213eceaf996a302c654e3f9.nq.gz
+│   ├── ecceed5a1951a4eb50a1daf3be68405f522816ef.nq.gz
+│   ├── f0c61a15d7e76b56fd67dd6f674fae43a9c501b6.nq.gz
+│   ├── f24632de51bd9645584b7953f873b1c3bb195508.nq.gz
+│   └── f3e90bdfe99a1951cc1773e53aa2660a4ab7f27b.nq.gz
+├── branch
+│   └── branch.nq.gz
+├── commit
+│   └── commit.nq.gz
+├── filetree
+│   └── 4afafd3712d1cdd93dddc39da39d7d2ad832dfca.nq.gz
+├── issue
+│   └── issue.nq.gz
+├── pr
+│   └── pr.nq.gz
+└── tag
+    └── tag.nq.gz
+
+13 directories, 74 files
+```
+
+| Directory | What it contains |
+|-----------|-----------------|
+| `blob/` | Per-file AST graphs, content-addressed by git blob SHA. Each file in the source repo gets its own graph. |
+| `aggregate/ast/` | Combined AST graph per parsed commit. Merges all blob graphs for a snapshot of the entire codebase at that point. |
+| `aggregate/lsp/` | Language Server Protocol enrichment: resolved symbols, definitions, references, and type information. |
+| `aggregate/dataflow/` | Interprocedural data flow edges between functions and modules. |
+| `aggregate/repolex/` | Combined graph (AST + LSP + dataflow) per commit. |
+| `commit/` | Git commit metadata (author, date, message, parent links). |
+| `branch/` | Branch metadata. |
+| `tag/` | Tag metadata. |
+| `filetree/` | File tree snapshots per commit (which files existed and their blob SHAs). |
+| `audit/` | Code architecture and graph audit reports per commit. |
+
+## Source repository
+
+[allenai/asta-bench-leaderboard](https://github.com/allenai/asta-bench-leaderboard)
+
+---
+*Parsed on 2026-11-07 by [repolex](https://repolex.ai)*
